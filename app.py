@@ -215,6 +215,10 @@ def handle_message(event):
                         text='/sosmed'
                     ),
                     MessageTemplateAction(
+                        label='About',
+                        text='/about'
+                    ),
+                    MessageTemplateAction(
                         label='Bot out!!!',
                         text='/bye'
                     )
