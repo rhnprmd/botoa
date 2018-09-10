@@ -70,6 +70,57 @@ def handle_message(event):
             line_bot_api.reply_message(
                 event.reply_token,
                 TextSendMessage(text="Bot can't leave from 1:1 chat"))
+            #=====[ CAROUSEL MESSAGE ]==========
+    elif text == '@jp':
+        message = TemplateSendMessage(
+            alt_text='Jadwal Pelajaran',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        title='Senin',
+                        text='Sedang Tahap pengerjaan',
+                        actions=[
+                            URITemplateAction(
+                                label='Creator',
+                                uri='https://line.me/ti/p/~rhnprmd'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        title='Selasa',
+                        text='Sedang Tahap pengerjaan',
+                        actions=[
+                            URITemplateAction(
+                                label='Creator',
+                                uri='https://line.me/ti/p/~rhnprmd'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        title='Rabu',
+                        text='Sedang Tahap pengerjaan',
+                        actions=[
+                            URITemplateAction(
+                                label='Creator',
+                                uri='https://line.me/ti/p/~rhnprmd'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        title='Kamis',
+                        text='Sedang Tahap pengerjaan',
+                        actions=[
+                            URITemplateAction(
+                                label='Creator',
+                                uri='https://line.me/ti/p/~rhnprmd'
+                            )
+                        ]
+                    )
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, message)
+#=====[ FLEX MESSAGE ]==========
 #=====[ TEMPLATE MESSAGE ]=============
     elif text == '/menu':
         buttons_template = TemplateSendMessage(
@@ -98,7 +149,7 @@ def handle_message(event):
 #=====[ CAROUSEL MESSAGE ]==========
     elif text == '/sosmed':
         message = TemplateSendMessage(
-            alt_text='Sosial Media',
+            alt_text='SosialMedia',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
@@ -108,16 +159,6 @@ def handle_message(event):
                             URITemplateAction(
                                 label='Instagram',
                                 uri='https://www.instagram.com/osistrikabta'
-                            )
-                        ]
-                    ),
-                    CarouselColumn(
-                        title='Uknown/Error',
-                        text='Uknown/Error',
-                        actions=[
-                            URITemplateAction(
-                                label='Uknown/Error',
-                                text='Uknown'
                             )
                         ]
                     ),
@@ -195,7 +236,7 @@ def handle_message(event):
                                 spacing='sm',
                                 contents=[
                                     TextComponent(
-                                        text='Time',
+                                        text='Info',
                                         color='#aaaaaa',
                                         size='sm',
                                         flex=1
