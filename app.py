@@ -228,22 +228,16 @@ def handle_message(event):
         
         line_bot_api.reply_message(event.reply_token, buttons_template)
         #=====[ TEMPLATE MESSAGE ]=============
-    elif text == '/menu':
+    elif text == '/mantap':
         imagemap_message = ImagemapSendMessage(
-            base_url='https://stickershop.line-scdn.net/stickershop/v1/product/1000404/LINEStorePC/main@2x.png;compress=true',
-            alt_text='this is an imagemap',
+            base_url='https://stickershop.line-scdn.net/stickershop/v1/product/741/LINEStorePC/main@2x.png;compress=true',
+            alt_text='Mantap',
             base_size=BaseSize(height=1040, width=1040),
             actions=[
                 URIImagemapAction(
-                    link_uri='https://stickershop.line-scdn.net/stickershop/v1/product/1000404/LINEStorePC/main@2x.png;compress=true',
+                    link_uri='https://stickershop.line-scdn.net/stickershop/v1/product/741/LINEStorePC/main@2x.png;compress=true',
                     area=ImagemapArea(
                         x=0, y=0, width=520, height=1040
-                    )
-                ),
-                MessageImagemapAction(
-                    text='hello',
-                    area=ImagemapArea(
-                        x=520, y=0, width=520, height=1040
                     )
                 )
             ]
