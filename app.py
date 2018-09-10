@@ -71,7 +71,7 @@ def handle_message(event):
                 event.reply_token,
                 TextSendMessage(text="Bot can't leave from 1:1 chat"))
             #=====[ CAROUSEL MESSAGE ]==========
-    elif text == '@jp':
+    elif text == '@jp1':
         message = TemplateSendMessage(
             alt_text='Jadwal Pelajaran',
             template=CarouselTemplate(
