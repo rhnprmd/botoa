@@ -33,9 +33,9 @@ from linebot.models import (
 app = Flask(__name__)
 
 # Channel Access Token
-line_bot_api = LineBotApi('ISI TOKEN OA KALIAN')
+line_bot_api = LineBotApi('nBOZlu9u30ITxAt1tZXkbvAHsgb2/EIHhBo8mwuzg/dqIAhJNjqW/A97MBf2lX2B+5L7NicAQYMLSJh6vw/MZ6Gpsbbj1am/jIHH18e9azTknd/6Jxi2qFEMMFlmrrjHixXEE4hQKCkJw/DbNW7z9gdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
-handler = WebhookHandler('ISI CHHANEL SCREET')
+handler = WebhookHandler('7bc5b547eb74a52213c4e88af08da151')
 #===========[ NOTE SAVER ]=======================
 notes = {}
 
@@ -57,7 +57,7 @@ def handle_message(event):
     sender = event.source.user_id #get user_id
     gid = event.source.sender_id #get group_id
 #=====[ LEAVE GROUP OR ROOM ]==========
-    if text == 'bye':
+    if text == '/bye':
         if isinstance(event.source, SourceGroup):
             line_bot_api.reply_message(
                 event.reply_token, TextSendMessage(text='Leaving group'))
@@ -71,24 +71,24 @@ def handle_message(event):
                 event.reply_token,
                 TextSendMessage(text="Bot can't leave from 1:1 chat"))
 #=====[ TEMPLATE MESSAGE ]=============
-    elif text == '/template':
+    elif text == '/menu':
         buttons_template = TemplateSendMessage(
-            alt_text='template',
+            alt_text='Menu Bot!!!',
             template=ButtonsTemplate(
-                title='[ TEMPLATE MSG ]',
+                title='Menu Bot!!!',
                 text= 'Tap the Button',
                 actions=[
                     MessageTemplateAction(
-                        label='Culum 1',
-                        text='/aditmadzs'
+                        label='Info',
+                        text='/info'
                     ),
                     MessageTemplateAction(
-                        label='CULUM 2',
-                        text='/aditmadzs'
+                        label='Sosial media',
+                        text='/sosmed'
                     ),
                     MessageTemplateAction(
-                        label='CULUM 3',
-                        text='/aditmadzs'
+                        label='Bot out!!!',
+                        text='/bye'
                     )
                 ]
             )
@@ -96,28 +96,38 @@ def handle_message(event):
         
         line_bot_api.reply_message(event.reply_token, buttons_template)
 #=====[ CAROUSEL MESSAGE ]==========
-    elif text == '/carousel':
+    elif text == '/sosmed':
         message = TemplateSendMessage(
-            alt_text='OTHER MENU',
+            alt_text='Sosial Media',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        title='ADD ME',
-                        text='Contact Aditmadzs',
+                        title='Instagram',
+                        text='Follow instagram kami!!!',
                         actions=[
                             URITemplateAction(
-                                label='>TAP HERE<',
-                                uri='https://line.me/ti/p/~adit_cmct'
+                                label='Instagram',
+                                uri='https://www.instagram.com/osistrikabta'
                             )
                         ]
                     ),
                     CarouselColumn(
-                        title='Instagram',
-                        text='FIND ME ON INSTAGRAM',
+                        title='Uknown/Error',
+                        text='Uknown/Error',
                         actions=[
                             URITemplateAction(
-                                label='>TAP HERE!<',
-                                uri='http://line.me/ti/p/~adit_cmct'
+                                label='Uknown/Error',
+                                text='Uknown'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        title='Line',
+                        text='Add line kami!!!',
+                        actions=[
+                            URITemplateAction(
+                                label='Line',
+                                uri='https://line.me/ti/p/~@xqk3695y'
                             )
                         ]
                     )
@@ -126,21 +136,21 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, message)
 #=====[ FLEX MESSAGE ]==========
-    elif text == 'flex':
+    elif text == '/info':
         bubble = BubbleContainer(
             direction='ltr',
             hero=ImageComponent(
-                url='https://lh5.googleusercontent.com/VoOmR6tVRwKEow0HySsJ_UdrQrqrpwUwSzQnGa0yBeqSex-4Osar2w-JohT6yPu4Vl4qchND78aU2c5a5Bhl=w1366-h641-rw',
+                url='https://instagram.fcgk2-1.fna.fbcdn.net/vp/508aca5ef58a753abbbe920f4a983fc0/5C18895F/t51.2885-19/s150x150/23735022_1795261150771794_2580732426670047232_n.jpg',
                 size='full',
                 aspect_ratio='20:13',
                 aspect_mode='cover',
-                action=URIAction(uri='http://line.me/ti/p/~adit_cmct', label='label')
+                action=URIAction(uri='https://www.instagram.com/osistrikabta', label='label')
             ),
             body=BoxComponent(
                 layout='vertical',
                 contents=[
                     # title
-                    TextComponent(text='Aditmadzs', weight='bold', size='xl'),
+                    TextComponent(text='OSIS SMA NEGERI 3 TANGERANG', weight='bold', size='xl'),
                     # review
                     BoxComponent(
                         layout='baseline',
@@ -191,7 +201,7 @@ def handle_message(event):
                                         flex=1
                                     ),
                                     TextComponent(
-                                        text="10:00 - 23:00",
+                                        text="Untuk informasi lebih lanjut silahkan follow instagram @osistrikabta",
                                         wrap=True,
                                         color='#666666',
                                         size='sm',
@@ -213,7 +223,7 @@ def handle_message(event):
                     ButtonComponent(
                         style='link',
                         height='sm',
-                        action=URIAction(label='Aditmadzs', uri="https://line.me/ti/p/~adit_cmct")
+                        action=URIAction(label='Follow Instagram', uri="https://www.instagram.com/osistrikabta")
                     )
                 ]
             ),
