@@ -151,9 +151,9 @@ def handle_message(event):
 #=====[ TEMPLATE MESSAGE ]=============
     elif text == '/menu':
         buttons_template = TemplateSendMessage(
-            alt_text='Menu Bot!!!',
+            alt_text='Menu Bot',
             template=ButtonsTemplate(
-                title='Menu Bot!!!',
+                title='Menu Bot',
                 text= 'Tap the Button',
                 actions=[
                     MessageTemplateAction(
