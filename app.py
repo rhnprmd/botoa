@@ -121,6 +121,33 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, message)
 #=====[ FLEX MESSAGE ]==========
+#=====[ CAROUSEL MESSAGE ]==========
+    elif text == '/test':
+        image_carousel_template_message = TemplateSendMessage(
+        alt_text='ImageCarousel template',
+        template=ImageCarouselTemplate(
+            columns=[
+                ImageCarouselColumn(
+                    image_url='https://c.pxhere.com/images/a8/90/fce6814d341b7ed50a522418df04-1440147.jpg!d',
+                    action=PostbackAction(
+                        label='postback1',
+                        text='postback text1',
+                        data='action=buy&itemid=1'
+                    )
+                ),
+                ImageCarouselColumn(
+                    image_url='https://c.pxhere.com/images/41/89/db5bad17f91dd0186f117bd56b5b-1445355.jpg!d',
+                    action=PostbackAction(
+                        label='postback2',
+                        text='postback text2',
+                        data='action=buy&itemid=2'
+                    )
+                )
+            ]
+        )
+    )
+        line_bot_api.reply_message(event.reply_token, image_carousel_template_message)
+#=====[ FLEX MESSAGE ]==========
 #=====[ TEMPLATE MESSAGE ]=============
     elif text == '/menu':
         buttons_template = TemplateSendMessage(
