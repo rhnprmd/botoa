@@ -128,10 +128,10 @@ def handle_message(event):
             template=ImageCarouselTemplate(
                 columns=[
                     ImageCarouselColumn(
-                        image_url='https://c.pxhere.com/images/a8/90/fce6814d341b7ed50a522418df04-1440147.jpg!d',
+                        image_url='https://asset.kompas.com/crop/0x0:1000x667/750x500/data/photo/2017/04/21/3305124549.jpg',
                         action=PostbackAction(
-                            label='postback1',
-                            text='postback text1',
+                            label='Follow Instagram',
+                            uri='https://www.instagram.com/osistrikabta',
                             data='action=buy&itemid=1'
                         )
                     ),
