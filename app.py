@@ -131,7 +131,7 @@ def handle_message(event):
                         image_url='https://asset.kompas.com/crop/0x0:1000x667/750x500/data/photo/2017/04/21/3305124549.jpg',
                         action=PostbackAction(
                             label='Follow Instagram',
-                            uri='https://www.instagram.com/osistrikabta',
+                            text='https://www.instagram.com/osistrikabta',
                             data='action=buy&itemid=1'
                         )
                     ),
