@@ -174,7 +174,7 @@ def handle_message(event):
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://example.com/item2.jpg',
+                        thumbnail_image_url='http://i1130.photobucket.com/albums/m529/aghoose/LINE%20Sticker/A%20Boss%20Life/9127_zpsf03f5de2.png',
                         title='this is menu2',
                         text='description2',
                         actions=[
@@ -230,12 +230,12 @@ def handle_message(event):
         #=====[ TEMPLATE MESSAGE ]=============
     elif text == '/mantap':
         imagemap_message = ImagemapSendMessage(
-            base_url='https://stickershop.line-scdn.net/stickershop/v1/product/741/LINEStorePC/main@2x.png;compress=true',
+            base_url='http://i1130.photobucket.com/albums/m529/aghoose/LINE%20Sticker/A%20Boss%20Life/9127_zpsf03f5de2.png',
             alt_text='Mantap',
             base_size=BaseSize(height=1040, width=1040),
             actions=[
                 URIImagemapAction(
-                    link_uri='https://stickershop.line-scdn.net/stickershop/v1/product/741/LINEStorePC/main@2x.png;compress=true',
+                    link_uri='http://i1130.photobucket.com/albums/m529/aghoose/LINE%20Sticker/A%20Boss%20Life/9127_zpsf03f5de2.png',
                     area=ImagemapArea(
                         x=0, y=0, width=520, height=1040
                     )
